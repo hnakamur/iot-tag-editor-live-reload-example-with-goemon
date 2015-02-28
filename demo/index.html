@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Riot tag editor example</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="tag-editor.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>html5.addElements('todo')</script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <h1>riot tag-editor example</h1>
+    <ul>
+      <li>When you click the editor, the editor will get focus.</li>
+      <li>When you input a word followed by a space, comma, or Enter key, a tag will be added.</li>
+      <li>When the editor lose focus while the text in the editor is not empty, the text will be added as a tag.</li>
+      <li>You cannot add the same tag more than twice.</li>
+      <li>When you paste text containing comma's or spaces (ex. "baz, hoge"), the multiple tags will be added at once.</li>
+      <li>When you click "x" in a tag, the tag will be deleted.</li>
+      <li>When you press the Backspace key while the editor is empty, the last tag will be deleted.</li>
+    </ul>
+    <tag-editor></tag-editor>
+
+    <script src="https://cdn.jsdelivr.net/riot/2.0/riot.min.js"></script>
+    <script src="tag-editor.js"></script>
+
+    <script>
+    riot.mount('tag-editor', {
+      tags: [
+        {name: 'foo'},
+        {name: 'bar'},
+      ]
+    })
+    </script>
+
+  </body>
+
+</html>
